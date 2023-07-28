@@ -2,7 +2,7 @@
   <form @submit.prevent="createEvent()">
     <div>
       <label for="name">Event Name</label>
-      <input v-model="editable.name" class="form-control" type="text" id="name" name="name" required>
+      <input v-model="editable.name" class="form-control" type="text" id="name" name="name" maxlength="50" required>
     </div>
     <div>
       <label for="coverImg">Cover Image</label>

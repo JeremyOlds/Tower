@@ -57,7 +57,8 @@
         <div class=" p-2 mb-5 event-img rounded">
 
           <div>
-            <img v-for="t in tickets" :key="t.id" class="avatar p-1" :src="t.profile.picture" :alt="t.profile.name">
+            <img :title="t.profile.name" v-for="t in tickets" :key="t.id" class="avatar p-1" :src="t.profile.picture"
+              :alt="t.profile.name">
           </div>
         </div>
       </div>
