@@ -6,5 +6,6 @@ export class Ticket {
     this.accountId = data.accountId
     this.profile = data.profile
     this.event = data.event
+    // this.event.startDate = new Date(data.event?.startDate)
   }
 }

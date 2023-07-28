@@ -21,6 +21,7 @@
           <div class="col-md-6 col-12">
             <h4>{{ t.event.name }}</h4>
             <h4> {{ t.event.location }}</h4>
+            <h4>{{ new Date(t.event.startDate).toDateString() }}</h4>
             <button @click="removeAccountTicket(t.eventId)" class="btn btn-danger">Stop Attending</button>
 
           </div>
