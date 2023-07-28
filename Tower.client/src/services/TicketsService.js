@@ -18,12 +18,25 @@ class TicketsService {
     const res = await api.delete(`api/tickets/${foundTicket.id}`)
     const ticketIndex = AppState.tickets.findIndex(t => t.id == foundTicket.id)
     AppState.tickets.splice(ticketIndex, 1)
+    AppState.ActiveTowerEvent.ticketCount--
+  }
+  async removeAccountTicket(eventId) {
+    const foundTicket = AppState.myTickets.find(t => t.eventId == eventId)
+    const res = await api.delete(`api/tickets/${foundTicket.id}`)
+    const ticketIndex = AppState.myTickets.findIndex(t => t.id == foundTicket.id)
+    AppState.myTickets.splice(ticketIndex, 1)
   }
   async getTicketsByEvent(eventId) {
     const res = await api.get(`api/events/${eventId}/tickets`)
     logger.log('getting tickets', res.data)
     const tickets = res.data.map(t => new Ticket(t))
     AppState.tickets = tickets
+  }
+  async getMyTickets() {
+    const res = await api.get(`account/tickets`)
+    const myTickets = res.data.map(t => new Ticket(t))
+    logger.log('my tickets', myTickets)
+    AppState.myTickets = myTickets
   }
 
 }

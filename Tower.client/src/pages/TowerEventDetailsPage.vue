@@ -20,10 +20,10 @@
                 <h4>{{ activeEvent.location }}</h4>
               </div>
               <div class="ps-2">
-                <h4>{{ activeEvent.startDate.getDate() }}<span>{{ setCorrectTime(activeEvent.startDate.getDate())
-                }} of {{ activeEvent.startDate.toLocaleDateString('en-us', { month: 'long' }) }}</span>
+                <h4>{{ activeEvent?.startDate.getDate() }}<span>{{ setCorrectTime(activeEvent?.startDate.getDate())
+                }} of {{ activeEvent?.startDate.toLocaleDateString('en-us', { month: 'long' }) }}</span>
                 </h4>
-                <h4>Starting at {{ activeEvent.startDate.toLocaleTimeString('en-us') }}</h4>
+                <h4>Starting at {{ activeEvent?.startDate.toLocaleTimeString('en-us') }}</h4>
               </div>
             </div>
             <div>
@@ -31,13 +31,13 @@
             </div>
             <div class="d-flex justify-content-between align-items-end">
               <p><span class="spot-text">{{ activeEvent.capacity - activeEvent.ticketCount }}</span> Spots Left</p>
-              <div v-if="activeEvent.isCanceled == false">
+              <div v-if="activeEvent.isCanceled == false && account.id">
                 <button @click="createTicket()" class="btn btn-warning"
                   v-if="activeEvent.capacity - activeEvent.ticketCount > 0 && !hasTicket">Attend</button>
                 <button @click="removeTicket()" v-else-if="hasTicket" class="btn btn-danger">Stop Attending</button>
                 <p class="bg-danger rounded p-2" v-else>No Spots Left</p>
               </div>
-              <div v-else>
+              <div v-else-if="account.id">
                 <p class="bg-danger rounded p-2">Canceled</p>
               </div>
 
@@ -57,8 +57,7 @@
         <div class=" p-2 mb-5 event-img rounded">
 
           <div>
-            <img v-for="   t    in    tickets   " :key="t.id" class="avatar p-1" :src="t.profile.picture"
-              :alt="t.profile.name">
+            <img v-for="t in tickets" :key="t.id" class="avatar p-1" :src="t.profile.picture" :alt="t.profile.name">
           </div>
         </div>
       </div>

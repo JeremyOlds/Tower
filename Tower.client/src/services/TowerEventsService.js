@@ -35,14 +35,12 @@ class TowerEventsService {
     // TODO change the one property in the appState
     AppState.ActiveTowerEvent.isCanceled = true
   }
-  async getEventsByAccount() {
-    const res = await api.get(`api/events`)
-    const towerEvents = res.data.map(e => new TowerEvent(e))
-    logger.log('tower events account page', towerEvents)
-    const myEvents = await towerEvents.filter(e => e.creatorId == AppState.account.id)
-    logger.log('my Events', myEvents)
-    AppState.towerEvents = myEvents
+  getMyEvents() {
+    const myTowerEvents = AppState.towerEvents.filter(e => e.creatorId == AppState.account.id)
+    logger.log('my events', myTowerEvents)
+    AppState.myTowerEvents = myTowerEvents
   }
+
 
 }
 
