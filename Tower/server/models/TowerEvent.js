@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 export const TowerEventSchema = new Schema({
   creatorId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' },
-  name: { type: String, required: true, maxlength: 50, minlength: 3 },
+  name: { type: String, maxlength: 50, minlength: 3 },
   description: { type: String },
   coverImg: { type: String, maxlength: 500, minlength: 5 },
   location: { type: String, maxlength: 50, minlength: 3 },
