@@ -13,6 +13,6 @@ Tower is a event sharing website designed to allow users to create and sign up f
 
 ![alt text](Tower.client\public\TowerAccountPage.png)
 
-![](Tower.client\public\TowerEventPage.png)
+![alt text 2](Tower.client\public\TowerEventPage.png)
 
-![](Tower.client\public\TowerAccountPage.png)
+![alt text 3](Tower.client\public\TowerAccountPage.png)
