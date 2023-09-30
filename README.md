@@ -11,8 +11,8 @@ Tower is a event sharing website designed to allow users to create and sign up f
 
 - Users can attend events
 
-![alt text](public\TowerAccountPage.png)
+![alt text](https://github.com/JeremyOlds/Tower/blob/main/public/TowerMainPage.png)
 
-![alt text 2](public\TowerEventPage.png)
+![alt text 2](https://github.com/JeremyOlds/Tower/blob/main/public/TowerEventPage.png)
 
-![alt text 3](public\TowerAccountPage.png)
+![alt text 3](https://github.com/JeremyOlds/Tower/blob/main/public/TowerAccountPage.png)
